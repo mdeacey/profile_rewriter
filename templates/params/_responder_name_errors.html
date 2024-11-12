@@ -1,0 +1,9 @@
+<div id="responder-name-error" class="error-message">
+    {% with messages = get_flashed_messages(category_filter=["responder_name"]) %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>

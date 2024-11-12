@@ -1,0 +1,24 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Flask Session Files
+flask_session/
+
+# macOS Metadata
+.DS_Store
+
+# Environment Variables
+.env
+
+# Data and Temporary Files
+data/
+
+# Editor/IDE Metadata
+.vscode/
+
+# Docker Ignore
+*.swp
+*.swo

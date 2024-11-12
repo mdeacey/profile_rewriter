@@ -1,0 +1,15 @@
+<section>
+    <h2>Original Text</h2>
+    <h3>Enter Text to Rewrite</h3>
+
+    <div class="textarea-container" style="position: relative;">
+        <label for="inputTextarea" class="sr-only">Original Text</label>
+        <textarea name="input_text" id="inputTextarea" rows="9" maxlength="500" placeholder="Enter text to rewrite...">{{ input_text }}</textarea>
+
+        {% include 'input/_input_shortcuts.html' %}
+        
+    </div>
+
+    {% include 'input/_input_errors.html' %}
+
+</section>

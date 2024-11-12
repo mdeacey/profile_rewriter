@@ -1,0 +1,9 @@
+<div id="input-text-error" class="error-message" aria-live="polite">
+    {% with messages = get_flashed_messages(category_filter=["input_text"]) %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>

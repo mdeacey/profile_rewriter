@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head/head.html' %}
+
+<body>
+    <div class="page-container">
+        {% include 'static/header.html' %}
+        
+        <form method="POST" action="{{ url_for('submit_text') }}" onsubmit="LoadingManager.showLoading()">
+            {% include 'api_key/api_key.html' %}
+            {% include 'params/params.html' %}
+            {% include 'input/input.html' %}
+            {% include 'input/submit.html' %}
+        </form>    
+
+        {% include 'output/loading.html' %}
+        {% include 'output/output.html' %}
+
+        {% include 'static/terms_privacy.html' %}
+        {% include 'static/versions_roadmap.html' %}
+        {% include 'static/donations.html' %}
+        {% include 'static/ethos_feedback.html' %}
+
+        {% include 'static/footer.html' %}
+    </div>
+
+    {% include 'scripts/scripts.html' %}
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<div class="shortcut-container" id="navigationShortcutsoutputTextarea{{ i + 1 }}">
+    <div class="tokens-cost-info">
+        {{ tokens_used[i] }} Tokens · ~${{ "%.6f" % estimated_cost[i] }}
+    </div>
+    
+    <!-- Shortcut buttons -->
+    {% if output_texts|length == 1 %}
+        <button type="button" class="shortcut-btn" id="upToInputTextBtn{{ i + 1 }}" aria-label="Navigate to Input Text" onclick="handleShortcutClick(2)">
+            Input Text <kbd>↑</kbd> or <kbd>0</kbd>
+        </button>
+    {% elif i == 0 %}
+        <button type="button" class="shortcut-btn" id="upToInputTextBtn{{ i + 1 }}" aria-label="Navigate to Input Text" onclick="handleShortcutClick(2)">
+            Input Text <kbd>↑</kbd> or <kbd>0</kbd>
+        </button>
+        <button type="button" class="shortcut-btn" id="downToNextOutputBtn{{ i + 1 }}" aria-label="Navigate to Next Response" onclick="handleShortcutClick({{ i + 4 }})">
+            Next Response <kbd>↓</kbd> or <kbd>{{ i + 2 }}</kbd>
+        </button>
+    {% elif i == output_texts|length - 2 %}
+        <button type="button" class="shortcut-btn" id="upToPrevOutputBtn{{ i + 1 }}" aria-label="Navigate to Previous Response" onclick="handleShortcutClick({{ i + 2 }})">
+            Previous Response <kbd>↑</kbd> or <kbd>{{ i }}</kbd>
+        </button>
+        <button type="button" class="shortcut-btn" id="downToLastOutputBtn{{ i + 1 }}" aria-label="Navigate to Last Response" onclick="handleShortcutClick({{ i + 4 }})">
+            Last Response <kbd>↓</kbd> or <kbd>{{ i + 2 }}</kbd>
+        </button>
+    {% elif i == output_texts|length - 1 %}
+        <button type="button" class="shortcut-btn" id="upToPrevOutputBtn{{ i + 1 }}" aria-label="Navigate to Previous Response" onclick="handleShortcutClick({{ i + 2 }})">
+            Previous Response <kbd>↑</kbd> or <kbd>{{ i }}</kbd>
+        </button>
+    {% else %}
+        <button type="button" class="shortcut-btn" id="upToPrevOutputBtn{{ i + 1 }}" aria-label="Navigate to Previous Response" onclick="handleShortcutClick({{ i + 2 }})">
+            Previous Response <kbd>↑</kbd> or <kbd>{{ i }}</kbd>
+        </button>
+        <button type="button" class="shortcut-btn" id="downToNextOutputBtn{{ i + 1 }}" aria-label="Navigate to Next Response" onclick="handleShortcutClick({{ i + 4 }})">
+            Next Response <kbd>↓</kbd> or <kbd>{{ i + 2 }}</kbd>
+        </button>
+    {% endif %}
+    
+    <button type="button" class="shortcut-btn" id="copyBtnoutputTextarea{{ i + 1 }}" aria-label="Copy Text">Copy</button>
+</div>

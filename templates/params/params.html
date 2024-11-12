@@ -1,0 +1,88 @@
+<section class="params_container">
+    <h2>Parameters</h2>
+    <h3>Customize Your Rewrite Settings</h3>
+
+    <div>
+        <label for="responder_name">Responder Name:</label>
+        <input type="text" id="responder_name" name="responder_name" class="input-text" value="{{ responder_name }}" placeholder="Enter responder name...">
+        
+        {% include 'params/_responder_name_errors.html' %}
+
+    </div>
+
+    <div>
+        <label for="dialect">Dialect:</label>
+        <select id="dialect" name="dialect">
+            <option value="american" {% if dialect == 'american' %}selected{% endif %}>American</option>
+            <option value="british" {% if dialect == 'british' %}selected{% endif %}>British</option>
+            <option value="australian" {% if dialect == 'australian' %}selected{% endif %}>Australian</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="formality">Formality:</label>
+        <select id="formality" name="formality">
+            <option value="neutral" {% if formality == 'neutral' %}selected{% endif %}>Neutral</option>
+            <option value="formal" {% if formality == 'formal' %}selected{% endif %}>Formal</option>
+            <option value="casual" {% if formality == 'casual' %}selected{% endif %}>Casual</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="tone">Tone:</label>
+        <select id="tone" name="tone">
+            <option value="neutral" {% if tone == 'neutral' %}selected{% endif %}>Neutral</option>
+            <option value="positive" {% if tone == 'positive' %}selected{% endif %}>Positive</option>
+            <option value="negative" {% if tone == 'negative' %}selected{% endif %}>Negative</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="creativity">Creativity:</label>
+        <select id="creativity" name="creativity">
+            <option value="low" {% if creativity == 'low' %}selected{% endif %}>Low</option>
+            <option value="med" {% if creativity == 'med' %}selected{% endif %}>Medium</option>
+            <option value="high" {% if creativity == 'high' %}selected{% endif %}>High</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="channel">Channel:</label>
+        <select id="channel" name="channel">
+            <option value="chat" {% if channel == 'chat' %}selected{% endif %}>Chat</option>
+            <option value="email" {% if channel == 'email' %}selected{% endif %}>Email</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="greetings">Include Greetings:</label>
+        <select id="greetings" name="greetings">
+            <option value="include" {% if greetings == 'include' %}selected{% endif %}>Include</option>
+            <option value="exclude" {% if greetings == 'exclude' %}selected{% endif %}>Exclude</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="sentence_limit">Sentence Limit:</label>
+        <input type="number" id="sentence_limit" name="sentence_limit" class="input-number" value="{{ sentence_limit if sentence_limit != '∞' else '' }}" placeholder="∞">
+        
+        {% include 'params/_sentence_limit_errors.html' %}
+
+    </div>
+
+    <div>
+        <label for="num_outputs">Number of Outputs:</label>
+        <input type="number" id="num_outputs" name="num_outputs" min="1" max="10" class="input-number" value="{{ num_outputs }}" required>
+
+        {% include 'params/_num_outputs_errors.html' %}
+
+    </div>
+
+    <div>
+        <label for="uniqueness_attempts">Uniqueness Attempts:</label>
+        <input type="number" id="uniqueness_attempts" name="uniqueness_attempts" class="input-number" value="{{ uniqueness_attempts or '' }}" placeholder="Attempts" min="1" max="10">
+
+        {% include 'params/_uniqueness_attempts_errors.html' %}
+
+    </div>
+</section>

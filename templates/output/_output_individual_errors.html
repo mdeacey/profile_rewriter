@@ -1,0 +1,5 @@
+{% if not output_text %}
+<div class="error-message">
+    <p>Error: Failed to generate a unique output after {{ uniqueness_attempts }} attempt{{ uniqueness_attempts|int > 1 and "s" or "" }}.</p>
+</div>
+{% endif %}

@@ -1,0 +1,14 @@
+<div class="shortcut-container" id="navigationShortcutsinputTextarea" style="display: none;">
+    <!-- Always show the Parameters button -->
+    <button type="button" class="shortcut-btn" id="previousBtnInput" aria-label="Navigate to Parameters" onclick="handleShortcutClick(1)">
+        Parameters <kbd>↑</kbd>
+    </button>
+    <!-- Show the First Response button only if there are outputs -->
+    {% if output_texts|length > 0 %}
+        <button type="button" class="shortcut-btn" id="nextBtnInput" aria-label="Navigate to First Response" onclick="handleShortcutClick(3)">
+            First Response <kbd>↓</kbd> or <kbd>1</kbd>
+        </button>
+    {% endif %}
+    <!-- Copy button for input textarea -->
+    <button type="button" class="shortcut-btn" id="copyBtninputTextarea" aria-label="Copy Text">Copy</button>
+</div>

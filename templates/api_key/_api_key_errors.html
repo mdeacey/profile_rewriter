@@ -1,0 +1,9 @@
+<div id="api-key-error" class="error-message">
+    {% with messages = get_flashed_messages(category_filter=["api_key"]) %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>

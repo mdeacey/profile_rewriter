@@ -1,0 +1,41 @@
+.textarea-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.textarea-container textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;  /* Ensure the textarea appears above other elements inside the container */
+}
+.output-container {
+    position: relative;
+}
+.shortcut-container {
+    position: absolute;
+    right: 13px; /* Adjusted to ensure it's aligned properly */
+    bottom: 16px;
+    display: flex;
+    flex-direction: row; /* Ensure the items are arranged in a row */
+    align-items: center; /* Vertically center the items */
+    gap: 8px; /* Space between the button and shortcuts */
+    z-index: 2; /* Make sure shortcuts appear above the textarea */
+    padding: 4px 6px;
+}
+.shortcut-btn {
+    cursor: pointer;
+    padding: 3px 7px;
+}
+kbd {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 3px 8px;
+}
+@media (max-width: 480px) {
+    .shortcut-container {
+        display: none !important;
+    }
+}

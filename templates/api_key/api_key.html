@@ -1,0 +1,15 @@
+<section>
+    <h2>API Key</h2>
+    <h3>Connect Your Account</h3>
+    <p>Your OpenAI API key will be stored in a temporary session cookie. It will be automatically deleted when you close your browser.</p>
+
+    <div class="form-group">
+        <label for="apiKeyInput" class="sr-only">OpenAI API Key:</label>
+        <input type="password" id="apiKeyInput" name="api_key" placeholder="Enter your API Key..." value="{{ session.get('api_key', '') }}" class="full-width">
+        
+        <p>Don't have an OpenAI API Key? <a href="https://platform.openai.com/account/api-keys" target="_blank" class="api-key-link">Generate one here ↗</a></p>
+    </div>
+        
+    {% include 'api_key/_api_key_errors.html' %}
+
+</section>

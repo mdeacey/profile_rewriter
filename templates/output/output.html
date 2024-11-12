@@ -1,0 +1,26 @@
+<section>
+    {% if output_texts and session.get('output_success') == True %}
+        <h2>Generated Outputs</h2>
+        {% for i, output_text in enumerate(output_texts) %}
+        <div class="output-container">
+            <h3>Output {{ i + 1 }}</h3>
+            <div class="textarea-container">
+                <textarea name="outputTextarea{{ i + 1 }}" id="outputTextarea{{ i + 1 }}" rows="9" readonly aria-label="Generated Output {{ i + 1 }}">{{ output_text }}</textarea>
+                {% include 'output/_output_shortcuts.html' %}
+            </div>
+
+            {% include 'output/_output_individual_errors.html' %}
+    
+        </div>
+        {% endfor %}
+
+        <br>
+
+        <div class="total-tokens-cost-info">
+            {{ total_tokens_used }} Total Tokens · ~${{ "%.6f" % total_estimated_cost }}
+        </div>
+    {% endif %}
+
+    {% include 'output/_output_errors.html' %}
+
+</section>

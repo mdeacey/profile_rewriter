@@ -1,0 +1,73 @@
+body, html {
+    margin: 0;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.two-column-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.two-column-container h2,
+.two-column-container p {
+    margin: 0;
+    padding: 0;
+}
+
+.two-column-container h2 + p {
+    margin-top: 16px;
+}
+
+.two-column-container div {
+    box-sizing: border-box;
+}
+
+section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+section:first-child {
+    margin-top: 0;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+form {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.params_container div {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.params_container div:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+footer {
+    border-top: 1px solid #767676;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .two-column-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .two-column-container div {
+        width: 100%;
+    }
+}
